@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
-	<bean id="xiaoming" class="study.spring.Student">
-		<property name="name" value="${student.xiaoming.name}"></property>
-		<property name="age" value="${student.xiaoming.age}"></property>
+	<bean id="xiaoming" class="com.simplespring.test.Student">
+		<property name="name" value="xiaoming"></property>
+		<property name="age" value="20"></property>
+		<property name="dog" ref="wangcai"></property>
+	</bean>
+
+	<bean id="wangcai" class="com.simplespring.test.Dog">
+		<property name="color" value="black"></property>
+		<property name="weight" value="30"></property>
 	</bean>
 </beans>

@@ -1,7 +1,16 @@
 package com.simplespring.beans.support;
 
+import static com.simplespring.beans.support.Constants.BEAN;
+import static com.simplespring.beans.support.Constants.BEAN_CLASS;
+import static com.simplespring.beans.support.Constants.BEAN_ID;
+import static com.simplespring.beans.support.Constants.PROPERTY;
+import static com.simplespring.beans.support.Constants.PROPERTY_NAME;
+import static com.simplespring.beans.support.Constants.PROPERTY_REF;
+import static com.simplespring.beans.support.Constants.PROPERTY_VALUE;
+
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Field;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -17,7 +26,8 @@ import org.xml.sax.SAXException;
 import com.simplespring.beans.BeanDefinition;
 import com.simplespring.beans.Property;
 import com.simplespring.beans.factory.BeanFactory;
-import static com.simplespring.beans.support.Constants.*;
+import com.simplespring.test.Dog;
+import com.simplespring.test.Student;
 
 /**
  * 类路径下的应用上下文
@@ -26,7 +36,10 @@ import static com.simplespring.beans.support.Constants.*;
  *
  */
 public class ClassPathXmlApplicationContext implements BeanFactory {
+	/** 存储Bean元信息，即为从xml中直接解析得到的信息 */
 	private ConcurrentMap<String, BeanDefinition> beanDefinitions = new ConcurrentHashMap<String, BeanDefinition>();
+	/** 存储依赖注入后的Bean实例 */
+	private ConcurrentMap<String, Object> beanObject = new ConcurrentHashMap<String, Object>();
 	private String filename;
 
 	public ClassPathXmlApplicationContext(String filename) {
@@ -40,7 +53,6 @@ public class ClassPathXmlApplicationContext implements BeanFactory {
 		} catch (SAXException e) {
 			e.printStackTrace();
 		}
-		this.print();
 	}
 
 	/**
@@ -60,7 +72,7 @@ public class ClassPathXmlApplicationContext implements BeanFactory {
 		for (int i = 0; i < beans.getLength(); i++) {
 			Element ele = (Element) beans.item(i);
 			BeanDefinition bean = parseBean(ele);
-			beanDefinitions.putIfAbsent(bean.getClassName(), bean);
+			beanDefinitions.putIfAbsent(bean.getId(), bean);
 		}
 	}
 
@@ -87,16 +99,56 @@ public class ClassPathXmlApplicationContext implements BeanFactory {
 		return bean;
 	}
 
-	private void print() {
-		System.out.println(beanDefinitions);
-	}
-
-	@Override
+	/**
+	 * 获取依赖注入之后的bean实例，依赖注入过程发生在获取实例时
+	 */
 	public Object getBean(String name) {
-		return null;
+		if (beanObject.containsKey(name)) {
+			return beanObject.get(name);
+		}
+		BeanDefinition definition = beanDefinitions.get(name);
+		if (definition == null) {
+			throw new IllegalArgumentException("bean " + name + " doesn't exist");
+		}
+		String className = definition.getClassName();
+		try {
+			Class<?> clazz = Class.forName(className);
+			Object beanIns = clazz.newInstance();
+			for (int i = 0; i < definition.getProperties().size(); i++) {
+				Property property = definition.getProperties().get(i);
+				Field field = clazz.getDeclaredField(property.getName());
+				field.setAccessible(true);
+				Class<?> fieldType = field.getType();
+				if (property.getValue() != null && property.getValue().length() > 0) {// 基本类型，目前支持int和String
+					if (fieldType.equals(int.class) || fieldType.equals(Integer.class)) {
+						int value = Integer.parseInt(property.getValue());
+						field.set(beanIns, value);
+					} else if (fieldType.equals(String.class)) {
+						field.set(beanIns, property.getValue());
+					} else {
+						throw new IllegalArgumentException(
+								String.format("doesn't support such type %s", fieldType.toString()));
+					}
+				} else if (property.getRef() != null && property.getRef().length() > 0) {// 引用类型
+					Object propertyIns = this.getBean(property.getRef());
+					field.set(beanIns, propertyIns);
+				} else {
+					throw new IllegalArgumentException(String.format("beanDefinition %s is wrong at property %s",
+							definition.getId(), property.toString()));
+				}
+			}
+			beanObject.putIfAbsent(definition.getId(), beanIns);
+			return beanIns;
+		} catch (Exception e) {
+			throw new IllegalArgumentException(e);
+		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Throwable {
 		BeanFactory beanFactory = new ClassPathXmlApplicationContext("applicationContext.xml");
+		Student stu = (Student) beanFactory.getBean("xiaoming");
+		Dog dog = (Dog) beanFactory.getBean("wangcai");
+		System.out.println(stu);
+		System.out.println(dog);
 	}
 }
