@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="zb.springframework.beans.factory.BeanNameAware" x="805" y="519">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="zb.springframework.beans.factory.HierarchicalBeanFactory"
+        x="871" y="143">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="zb.springframework.beans.factory.BeanFactory"/>
+    </Class>
+    <Class name="zb.springframework.beans.factory.InitializingBean"
+        x="299" y="517">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="zb.springframework.context.Lifecycle" x="853" y="249">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="zb.springframework.context.support.AbstractXmlApplicationContext"
+        x="523" y="684">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="zb.springframework.context.support.AbstractRefreshableConfigApplicationContext"/>
+    </Class>
+    <Class
+        name="zb.springframework.core.io.support.ResourcePatternResolver"
+        x="352" y="154">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="zb.springframework.core.io.ResourceLoader"/>
+    </Class>
+    <Class name="zb.springframework.core.io.ResourceLoader" x="365" y="40">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="zb.springframework.beans.factory.BeanFactory" x="1077" y="37">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="zb.springframework.beans.factory.DisposableBean"
+        x="209" y="382">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="zb.springframework.context.support.AbstractRefreshableApplicationContext"
+        x="490" y="516">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="zb.springframework.context.support.AbstractApplicationContext"/>
+    </Class>
+    <Class
+        name="zb.springframework.context.ConfigurableApplicationContext"
+        x="518" y="331">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="zb.springframework.context.ApplicationContext"/>
+        <Extension destinationClassName="zb.springframework.context.Lifecycle"/>
+    </Class>
+    <Class
+        name="zb.springframework.context.support.ClassPathXmlApplicationContext"
+        x="523" y="770">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="zb.springframework.context.support.AbstractXmlApplicationContext"/>
+    </Class>
+    <Class name="zb.springframework.core.io.DefaultResourceLoader"
+        x="157" y="164">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="zb.springframework.core.io.ResourceLoader"/>
+    </Class>
+    <Class
+        name="zb.springframework.beans.factory.config.ConfigurableListableBeanFactory"
+        x="1062" y="255">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="zb.springframework.beans.factory.ListableBeanFactory"/>
+    </Class>
+    <Class name="zb.springframework.context.ApplicationContext" x="555" y="258">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="zb.springframework.beans.factory.HierarchicalBeanFactory"/>
+        <Extension destinationClassName="zb.springframework.context.MessageSource"/>
+        <Extension destinationClassName="zb.springframework.beans.factory.ListableBeanFactory"/>
+        <Extension destinationClassName="zb.springframework.context.ApplicationEventPublisher"/>
+        <Extension destinationClassName="zb.springframework.core.io.support.ResourcePatternResolver"/>
+    </Class>
+    <Class name="zb.springframework.context.MessageSource" x="546" y="151">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="zb.springframework.context.support.AbstractRefreshableConfigApplicationContext"
+        x="477" y="596">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="zb.springframework.beans.factory.BeanNameAware"/>
+        <Extension destinationClassName="zb.springframework.context.support.AbstractRefreshableApplicationContext"/>
+        <Extension destinationClassName="zb.springframework.beans.factory.InitializingBean"/>
+    </Class>
+    <Class name="zb.springframework.beans.factory.ListableBeanFactory"
+        x="1099" y="145">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="zb.springframework.beans.factory.BeanFactory"/>
+    </Class>
+    <Class name="zb.springframework.context.ApplicationEventPublisher"
+        x="685" y="147">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="zb.springframework.context.support.AbstractApplicationContext"
+        x="527" y="439">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="zb.springframework.beans.factory.DisposableBean"/>
+        <Extension destinationClassName="zb.springframework.context.ConfigurableApplicationContext"/>
+        <Extension destinationClassName="zb.springframework.core.io.DefaultResourceLoader"/>
+    </Class>
+</ClassDiagram>

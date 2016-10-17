@@ -1,5 +1,5 @@
 package zb.springframework.context;
 
-public interface ConfigurableApplicationContext {
+public interface ConfigurableApplicationContext extends ApplicationContext, Lifecycle {
 
 }

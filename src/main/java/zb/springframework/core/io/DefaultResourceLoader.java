@@ -1,5 +1,5 @@
 package zb.springframework.core.io;
 
-public class DefaultResourceLoader {
+public class DefaultResourceLoader implements ResourceLoader {
 
 }
