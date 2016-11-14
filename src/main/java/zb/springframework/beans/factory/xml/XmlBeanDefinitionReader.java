@@ -2,11 +2,12 @@ package zb.springframework.beans.factory.xml;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.channels.NetworkChannel;
 import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.BeanDefinitionStoreException;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.EncodedResource;
 import org.springframework.util.Assert;
 import org.springframework.util.xml.SimpleSaxErrorHandler;
 import org.springframework.util.xml.XmlValidationModeDetector;
@@ -18,9 +19,6 @@ import org.xml.sax.InputSource;
 import zb.springframework.beans.factory.support.AbstractBeanDefinitionReader;
 import zb.springframework.beans.factory.support.BeanDefinitionRegistry;
 import zb.springframework.core.NamedThreadLocal;
-import zb.springframework.core.io.Resource;
-import zb.springframework.core.io.ResourceLoader;
-import zb.springframework.core.io.support.EncodedResource;
 
 public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 

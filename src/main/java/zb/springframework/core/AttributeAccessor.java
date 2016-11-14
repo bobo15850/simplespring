@@ -1,5 +1,5 @@
 package zb.springframework.core;
 
-public interface AliasRegistry {
+public interface AttributeAccessor {
 
 }

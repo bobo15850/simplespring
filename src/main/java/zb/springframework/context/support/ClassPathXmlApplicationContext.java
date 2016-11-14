@@ -3,9 +3,9 @@ package zb.springframework.context.support;
 import java.io.IOException;
 
 import org.springframework.beans.BeansException;
+import org.springframework.core.io.Resource;
 
 import zb.springframework.context.ApplicationContext;
-import zb.springframework.core.io.Resource;
 
 public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContext {
 
@@ -16,6 +16,12 @@ public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContex
 		if (refresh) {
 			refresh();
 		}
+	}
+
+	@Override
+	public Resource[] getResources(String locationPattern) throws IOException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -1,9 +1,8 @@
 package zb.springframework.beans.factory.support;
 
 import org.springframework.beans.factory.BeanDefinitionStoreException;
-
-import zb.springframework.core.io.Resource;
-import zb.springframework.core.io.ResourceLoader;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 
 public interface BeanDefinitionReader {
 

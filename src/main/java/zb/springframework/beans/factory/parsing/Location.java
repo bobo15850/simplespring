@@ -1,5 +1,5 @@
 package zb.springframework.beans.factory.parsing;
 
-public class ReaderContext {
+public class Location {
 
 }

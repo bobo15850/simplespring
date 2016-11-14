@@ -3,10 +3,10 @@ package zb.springframework.context.support;
 import java.io.IOException;
 
 import org.springframework.beans.BeansException;
+import org.springframework.core.io.Resource;
 
 import zb.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import zb.springframework.context.ApplicationContext;
-import zb.springframework.core.io.Resource;
 
 public abstract class AbstractXmlApplicationContext extends AbstractRefreshableConfigApplicationContext {
 
